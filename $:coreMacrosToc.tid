@@ -11,7 +11,7 @@
       <$reveal stateTitle=<<__selectedTiddler__>> type="nomatch" text="">
         <$transclude mode="block" tiddler=<<__template__>>>
           <h1><<toc-caption>></h1>
-          {{||core/ui/ViewTemplate/tags}}
+          {{||$:/core/ui/ViewTemplate/tags}}
           <$transclude mode="block">$missingText$</$transclude>
         </$transclude>
       </$reveal>
