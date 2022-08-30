@@ -1,0 +1,24 @@
+<!-- extend core toc macro to show tag -->
+\define toc-tabbed-external-nav-extend(tag,sort:"",selectedTiddler:"$:/temp/toc/selectedTiddler",unselectedText,missingText,template:"")
+<$tiddler tiddler={{{ [<__selectedTiddler__>get[text]] }}}>
+  <div class="tc-tabbed-table-of-contents">
+    <$linkcatcher to=<<__selectedTiddler__>>>
+      <div class="tc-table-of-contents">
+        <$macrocall $name="toc-selective-expandable" tag=<<__tag__>> sort=<<__sort__>> itemClassFilter="[all[current]] -[<__selectedTiddler__>get[text]]"/>
+      </div>
+    </$linkcatcher>
+    <div class="tc-tabbed-table-of-contents-content">
+      <$reveal stateTitle=<<__selectedTiddler__>> type="nomatch" text="">
+        <$transclude mode="block" tiddler=<<__template__>>>
+          <h1><<toc-caption>></h1>
+          {{||core/ui/ViewTemplate/tags}}
+          <$transclude mode="block">$missingText$</$transclude>
+        </$transclude>
+      </$reveal>
+      <$reveal stateTitle=<<__selectedTiddler__>> type="match" text="">
+        $unselectedText$
+      </$reveal>
+    </div>
+  </div>
+</$tiddler>
+\end
