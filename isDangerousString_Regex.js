@@ -2,7 +2,7 @@
 title: $:/macros/isDangerousString.js
 type: application/javascript
 module-type: macro
-modify from: onlywei.github.io/explain-git-with-d3/#mergehttps://referencesource.microsoft.com/#mscorlib/system/string.cs,23a8597f842071f4,references
+modify from: https://referencesource.microsoft.com/#System.Web/CrossSiteScriptingValidation.cs,3c599cea73c5293b,references
 
 Return if a string is a dangerous string
 This macro use regex to check
