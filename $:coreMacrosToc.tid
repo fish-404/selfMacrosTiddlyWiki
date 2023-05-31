@@ -22,3 +22,24 @@
   </div>
 </$tiddler>
 \end
+
+<!-- extend core toc marco to show a list with tagged currentTiddler Title -->
+\define toc-list-tag-title()
+<$macrocall
+	$name="toc-tabbed-internal-nav"
+	tag=<<currentTiddler>>
+	selectedTiddler="$:/temp/toc/selectedTiddler"
+	unselectedText="<p>Choose item to view details.</p>"
+	missingText="<p>Not Found.</p>"
+/>
+\end
+
+\define toc-list-tag-title-zh()
+<$macrocall
+	$name="toc-tabbed-internal-nav"
+	tag=<<currentTiddler>>
+	selectedTiddler="$:/temp/toc/selectedTiddler"
+	unselectedText="<p>选择篇目以查看</p>"
+	missingText="<p>笔记遗失</p>"
+/>
+\end
